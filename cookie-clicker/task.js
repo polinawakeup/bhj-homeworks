@@ -13,5 +13,5 @@ cookie.onclick = function(){
     let difference = (now - lastClickTime) / 1000;
     let speed = 1 / difference;
     lastClickTime = now;
-    document.getElementById("clicker__speed").textContent = speed;
+    document.getElementById("clicker__speed").textContent = speed.toFixed(2);
 };
