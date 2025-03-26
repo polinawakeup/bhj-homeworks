@@ -9,7 +9,6 @@ class Game {
 
     this.registerEvents();
 
-    this.timerId = null;
   }
 
   reset() {
@@ -25,6 +24,8 @@ class Game {
 
       if (key === currentSymbol) {
         this.success();
+      } else {
+        this.fail();
       };
     });
   }
@@ -74,6 +75,7 @@ class Game {
       if (timeLeft === 0) { 
         clearInterval(this.timerId);
         this.fail();
+        this.setNewWord();
       }
     }, 1000);
   }
