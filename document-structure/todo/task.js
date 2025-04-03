@@ -2,7 +2,9 @@ const input = document.getElementById('task__input');
 const taskList = document.getElementById('tasks__list');
 const addButton = document.getElementById('tasks__add');
 
-function addTask() {
+function addTask(e) {
+    e.preventDefault();
+
      if(input.value.trim() === '') {
         return;
      }
@@ -21,12 +23,5 @@ function addTask() {
         task.remove();
     });
 }
-
-document.addEventListener('keydown', (e) => {
-    if (e.code === 'Enter') {
-        e.preventDefault();
-        addTask();
-    }
-});
 
 addButton.addEventListener('click', addTask);
